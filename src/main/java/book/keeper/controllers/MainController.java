@@ -1,7 +1,12 @@
 package book.keeper.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
+
+import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class MainController {
 
@@ -16,5 +21,19 @@ public class MainController {
         topMenuButtonsController.setMainController(this);
     }
 
+    public void setCenter(String fxmlPath) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
 
+        ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+
+        loader.setResources(bundle);
+        Parent parent = null;
+
+        try {
+            parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        borderPane.setCenter(parent);
+    }
 }
