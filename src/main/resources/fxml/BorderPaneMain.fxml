@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity"
             minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="920.0"
-            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="book.keeper.controllers.MainController">
+            xmlns="http://javafx.com/javafx/8.0.60" fx:controller="book.keeper.controllers.MainController">
     <top>
         <VBox cache="true" prefHeight="84.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <MenuBar>

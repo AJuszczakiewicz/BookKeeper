@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-
-
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="920.0"
             xmlns="http://javafx.com/javafx/11.0.1" fx:controller="book.keeper.controllers.MainController">
     <top>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <fx:include source="TopMenuButtons.fxml" fx:id="topMenuButtons"/>
+        <VBox cache="true" prefHeight="84.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <MenuBar>
+           <menus>
+               <Menu mnemonicParsing="false" text="%file">
+               <items>
+                   <MenuItem mnemonicParsing="false" onAction="#closeApp" text="%close"/>
+               </items>
+             </Menu>
+               <Menu mnemonicParsing="false" text="%view">
+               <items>
+                   <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="%modena">
+                        <toggleGroup>
+                           <ToggleGroup fx:id="toggleStyle" />
+                        </toggleGroup>
+                     </RadioMenuItem>
+                   <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian"
+                                  toggleGroup="$toggleStyle"/>
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                   <CheckMenuItem mnemonicParsing="false" onAction="#toggleAlwaysOnTop" text="%alwaysOnTop"/>
+               </items>
+             </Menu>
+               <Menu mnemonicParsing="false" text="%help">
+               <items>
+                   <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="%about"/>
+               </items>
+             </Menu>
+           </menus>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </MenuBar>
+            <fx:include fx:id="topMenuButtons" source="TopMenuButtons.fxml" />
         </VBox>
     </top>
 </BorderPane>
