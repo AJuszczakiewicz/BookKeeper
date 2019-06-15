@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckMenuItem?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.RadioMenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="book.keeper.controllers.MainController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="920.0"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="book.keeper.controllers.MainController">
     <top>
-        <VBox cache="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+        <VBox cache="true" prefHeight="84.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <MenuBar>
            <menus>
-             <Menu mnemonicParsing="false" text="File">
+               <Menu mnemonicParsing="false" text="%file">
                <items>
-                 <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                   <MenuItem mnemonicParsing="false" onAction="#closeApp" text="%close"/>
                </items>
              </Menu>
-             <Menu mnemonicParsing="false" text="View">
+               <Menu mnemonicParsing="false" text="%view">
                <items>
-                     <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="Modena">
+                   <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="%modena">
                         <toggleGroup>
                            <ToggleGroup fx:id="toggleStyle" />
                         </toggleGroup>
                      </RadioMenuItem>
-                     <RadioMenuItem mnemonicParsing="false" text="Caspian" toggleGroup="$toggleStyle" />
+                   <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian"
+                                  toggleGroup="$toggleStyle"/>
                      <SeparatorMenuItem mnemonicParsing="false" />
-                     <CheckMenuItem mnemonicParsing="false" text="Always on top" />
+                   <CheckMenuItem mnemonicParsing="false" onAction="#toggleAlwaysOnTop" text="%alwaysOnTop"/>
                </items>
              </Menu>
-             <Menu mnemonicParsing="false" text="Help">
+               <Menu mnemonicParsing="false" text="%help">
                <items>
-                 <MenuItem mnemonicParsing="false" text="About" />
+                   <MenuItem mnemonicParsing="false" onAction="#showAboutWindow" text="%about"/>
                </items>
              </Menu>
            </menus>
